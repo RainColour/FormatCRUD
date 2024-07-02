@@ -1,0 +1,36 @@
+﻿@model CRUD.Models.Trabalho
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar</h2>
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="Titulo" class="control-label"></label>
+        <input asp-for="Titulo" class="form-control" />
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Area" class="control-label"></label>
+        <input asp-for="Area" class="form-control" />
+        <span asp-validation-for="Area" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DataCriacao" class="control-label"></label>
+        <input asp-for="DataCriacao" class="form-control" />
+        <span asp-validation-for="DataCriacao" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status" class="control-label"></label>
+        <input asp-for="Status" class="form-control" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+<div>
+    <a href="/Trabalho" class="btn btn-secondary">Voltar</a>
+</div>

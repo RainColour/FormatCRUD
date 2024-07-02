@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CRUD.Models.Trabalho>
+
+@{
+    ViewData["Title"] = "Trabalhos";
+}
+
+<h2>Trabalhos</h2>
+
+<p>
+    <a href="/Trabalho/Create" class="btn btn-primary">Novo</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Titulo)</th>
+            <th>@Html.DisplayNameFor(model => model.Area)</th>
+            <th>@Html.DisplayNameFor(model => model.DataCriacao)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Titulo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Area)</td>
+                <td>@Html.DisplayFor(modelItem => item.DataCriacao)</td>
+                <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                <td>
+                    <a href="/Trabalho/Edit/@item.Id" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="/Trabalho/Details/@item.Id" class="btn btn-sm btn-info">Detalhes</a>
+                    <a href="/Trabalho/Delete/@item.Id" class="btn btn-sm btn-danger">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+﻿@model CRUD.Models.Trabalho
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Trabalho</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Titulo)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Titulo)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Area)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Area)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.DataCriacao)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.DataCriacao)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Status)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Status)</dd>
+    </dl>
+
+    <h4>Secoes</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Conteudo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var secao in Model.Secoes)
+            {
+                <tr>
+                    <td>@secao.Nome</td>
+                    <td>@secao.Conteudo</td>
+                    <td>
+                        <a href="/Secao/Edit/@secao.Id" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="/Secao/Delete/@secao.Id" class="btn btn-sm btn-danger">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a href="/Trabalho/Edit/@Model.Id" class="btn btn-warning">Editar</a>
+    <a href="/Trabalho" class="btn btn-secondary">Voltar</a>
+</div>

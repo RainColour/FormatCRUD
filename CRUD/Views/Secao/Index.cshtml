@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CRUD.Models.Secao>
+
+@{
+    ViewData["Title"] = "Secoes";
+}
+
+<h2>Secoes</h2>
+
+<p>
+    <a href="/Secao/Create" class="btn btn-primary">Novo</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Conteudo)</th>
+            <th>@Html.DisplayNameFor(model => model.Trabalho.Titulo)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Conteudo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Trabalho.Titulo)</td>
+                <td>
+                    <a href="/Secao/Edit/@item.Id" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="/Secao/Details/@item.Id" class="btn btn-sm btn-info">Detalhes</a>
+                    <a href="/Secao/Delete/@item.Id" class="btn btn-sm btn-danger">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
